@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.phandeptrai.dao.SinhVienDAO;
+import com.phandeptrai.dtos.ThongTinTNCVResponse;
 import com.phandeptrai.dtos.ThongTinTNRequest;
 
 @Service
@@ -14,6 +15,10 @@ public class SinhVienTNServiceImpl implements SinhVienTNService{
 	@Override
 	public boolean saveThongTinTN(ThongTinTNRequest request) {
 		return sinhVienDAO.saveThongTinTN(request);
+	}
+	@Override
+	public ThongTinTNCVResponse getThongTinTNVaCV(String soCMND) {
+		return sinhVienDAO.getThongTinTNVaCV(soCMND);
 	}
 
 }

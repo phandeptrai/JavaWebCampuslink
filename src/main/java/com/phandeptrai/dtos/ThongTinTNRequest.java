@@ -3,20 +3,42 @@ package com.phandeptrai.dtos;
 import java.time.LocalDate;
 
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 
 
 public class ThongTinTNRequest {
+	@NotBlank(message = "Số CMND không được để trống")
 	private String soCMND;
+
+	@NotBlank(message = "Họ tên không được để trống")
 	private String hoTen;
-	@Email(message = "Email lỗi")
+
+	@Email(message = "Email không hợp lệ")
+	@NotBlank(message = "Email không được để trống")
 	private String email;
+
+	@Pattern(regexp = "^0\\d{9}", message = "Số điện thoại không hợp lệ")
 	private String soDt;
+
+	@NotBlank(message = "Địa chỉ không được để trống")
 	private String diaChi;
+
+	@NotBlank(message = "Vui lòng chọn trường")
 	private String maTruong;
+
+	@NotBlank(message = "Vui lòng chọn ngành")
 	private String maNganh;
+
+	@NotBlank(message = "Hệ tốt nghiệp không được để trống")
 	private String heTN;
+
+	@NotNull(message = "Ngày tốt nghiệp không được để trống")
 	private LocalDate ngayTN;
+
+	@NotBlank(message = "Loại tốt nghiệp không được để trống")
 	private String loaiTN;
 
 	public ThongTinTNRequest() {

@@ -1,53 +1,65 @@
 package com.phandeptrai.entities;
 
 public class SinhVien {
-	private String SoCMND;
-	private String HoTen;
-	private String Email;
-	private String SoDt;
-	private String DiaChi;
+	private String soCMND;
+	private String hoTen;
+	private String email;
+	private String soDt;
+	private String diaChi;
 	
 	public SinhVien() {
 	}
-	
+
 	public SinhVien(String soCMND, String hoTen, String email, String soDt, String diaChi) {
 		super();
-		SoCMND = soCMND;
-		HoTen = hoTen;
-		Email = email;
-		SoDt = soDt;
-		DiaChi = diaChi;
+		this.soCMND = soCMND;
+		this.hoTen = hoTen;
+		this.email = email;
+		this.soDt = soDt;
+		this.diaChi = diaChi;
 	}
+
 	public String getSoCMND() {
-		return SoCMND;
+		return soCMND;
 	}
+
 	public void setSoCMND(String soCMND) {
-		SoCMND = soCMND;
+		this.soCMND = soCMND;
 	}
+
 	public String getHoTen() {
-		return HoTen;
+		return hoTen;
 	}
+
 	public void setHoTen(String hoTen) {
-		HoTen = hoTen;
+		this.hoTen = hoTen;
 	}
+
 	public String getEmail() {
-		return Email;
+		return email;
 	}
+
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
+
 	public String getSoDt() {
-		return SoDt;
+		return soDt;
 	}
+
 	public void setSoDt(String soDt) {
-		SoDt = soDt;
+		this.soDt = soDt;
 	}
+
 	public String getDiaChi() {
-		return DiaChi;
+		return diaChi;
 	}
+
 	public void setDiaChi(String diaChi) {
-		DiaChi = diaChi;
+		this.diaChi = diaChi;
 	}
+	
+
 	
 	
 }

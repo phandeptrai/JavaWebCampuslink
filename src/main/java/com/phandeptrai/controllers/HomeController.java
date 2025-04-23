@@ -47,8 +47,16 @@ public class HomeController {
 	}
 
 	@PostMapping(value = "/save")
-	public String saveSinhVien(@ModelAttribute("ThongTinTNRequest") ThongTinTNRequest thongTinTTRequest, Model model) {
+	public String saveSinhVien(@Valid @ModelAttribute("ThongTinTNRequest") ThongTinTNRequest thongTinTTRequest,BindingResult bindingResult, Model model) {
 		
+		if (bindingResult.hasErrors()) {
+			List<NganhResponse> nganhResponses = nganhService.getAllNganh();
+			List<TruongResponse> truongResponses = truongService.getAllTruong();
+			model.addAttribute("nganhs", nganhResponses);
+			model.addAttribute("truongs", truongResponses);
+
+			return "home";
+		}
 		boolean success = sinhVienTNService.saveThongTinTN(thongTinTTRequest);
 		
 		if(success)
